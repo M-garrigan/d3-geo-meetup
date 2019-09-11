@@ -2,7 +2,7 @@ import React from 'react';
 
 import Presentation from './components/Presentation.js';
 
-import useElementSize from './useElementSize.js';
+import useElementSize from './utils/useElementSize.js';
 
 import './styles/App.css';
 
