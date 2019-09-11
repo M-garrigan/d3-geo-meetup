@@ -1,0 +1,31 @@
+
+.presentation-backdrop {
+  align-items: center;
+  background: magenta;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+.presentation-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.topcontrol-wrapper {
+  background: rgb(0, 217, 255);
+  height: 10%;
+  width: 100%;
+}
+
+.slide-wrapper {
+  background: #333;
+  height: 80%;
+  width: 100%;
+}
+
+.bottomcontrol-wrapper {
+  background: maroon;
+  height: 10%;
+  width: 100%;
+}
