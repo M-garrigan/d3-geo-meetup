@@ -1,0 +1,139 @@
+
+.sl0-svg {
+  background:;
+}
+
+.sl0-country {
+  fill: rgb(196, 100, 12);
+  stroke: #333;
+}
+.sl0-ocean {
+  /* fill: blue; */
+  stroke: #333;
+}
+
+/* Slide Global */
+.slide-grid-full {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  height: 100%;
+  width: 100%;
+}
+.slide-title {
+  border-bottom: 1px solid gold;
+  color: white;
+  font-size: 5vw;
+  font-weight: 400;
+  grid-column: 4 / span 3;
+  grid-row: 1;
+  margin: auto;
+}
+
+/* s_basics */
+.sbasics-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-evenly;
+  margin: 10% auto;
+  width: 80%;
+}
+.sbasics-geoJSON {
+  background: rgba(0, 255, 255, 0.6);
+  border-radius: .5rem;
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 7;
+}
+.sbasics-projections {
+  background: rgba(255, 0, 255, 0.6);
+  border-radius: .5rem;
+  grid-column: 4 / span 3;
+  grid-row: 2 / span 7;
+}
+.sbasics-geoPath {
+  background: rgba(126, 252, 0, 0.6);
+  border-radius: .5rem;
+  grid-column: 7 / span 3;
+  grid-row: 2 / span 7;
+}
+.sbasics-group-title {
+  color: #242424;
+  font-size: 4vw;
+  font-weight: 400;
+}
+.sbasics-code {
+  font-size: 1vw !important;
+  height: 80%;
+  width: 90%;
+}
+.sbasics-projection-card {
+  background: #242424;
+  background-image: url("/assets/projection.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  width: 90%;
+}
+.sbasics-geopath-card {
+  background: #242424;
+  background-image: url("/assets/functionGen.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80%;
+  width: 90%;
+}
+
+/* s-basic-flow */
+.sbasicflow-group {
+  align-items: center;
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  margin: 10% 5%;
+  width: 90%;
+}
+.sbasicflow-geoJSON {
+  background: rgba(0, 255, 255, 0.6);
+  border-radius: .5rem;
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 2;
+}
+.sbasicflow-projection {
+  background: rgba(255, 0, 255, 0.6);
+  border-radius: .5rem;
+  grid-column: 6 / span 3;
+  grid-row: 2 / span 2;
+}
+.sbasicflow-geoPath {
+  background: rgba(126, 252, 0, 0.6);
+  border-radius: .5rem;
+  grid-column: 4 / span 3;
+  grid-row: 6 / span 2;
+}
+.sbasicflow-title {
+  color: #242424;
+  font-size: 4vw;
+  font-weight: 400;
+}
+.sbasicflow-arrows {
+  background-image: url("/assets/arrows.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  grid-column: 3 / span 5;
+  grid-row: 4 / span 2;
+  height: 100%;
+  width: 100%;
+  color: #d40055
+}
+
+/* s-basic-code */
+.sbasiccode-code {
+  font-size: 1.5vw !important;
+  grid-column: 2 / span 7;
+  grid-row: 2 / span 6;
+  height: 100%;
+  margin: 0 !important;
+  width: 100%;
+}
