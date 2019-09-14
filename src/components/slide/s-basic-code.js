@@ -27,10 +27,10 @@ const path = geoPath().projection(proj);
 
 geoData.features.map( (item, idx) => (
   <path
-    className="sl0-country"
     key={idx}
     ref={
       node => select(node).datum(item).attr('d', path) 
+    }
   />
 ))`.trim()
 }
