@@ -8,6 +8,7 @@ import '../styles/Presentation.css';
 
 export default props => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideDeckLength, setSlideDeckLength] = useState('');
 
   const {height, width} = props.dimensions;
   let slideW = width;
@@ -29,15 +30,22 @@ export default props => {
         <TopControl 
           currentSlide={currentSlide}
           height={Math.round(slideH * 0.1)}
+          slideDeckLength={slideDeckLength}
           width={slideW}
         />
         <Slide 
           currentSlide={currentSlide}
+          height={Math.round(slideH * 0.8)}
           width={slideW}
+
+          setSlideDeckLength={setSlideDeckLength}
         />
         <BottomControl 
           currentSlide={currentSlide}
+          height={Math.round(slideH * 0.1)}
           width={slideW}
+
+          setCurrentSlide={setCurrentSlide}
         />
       </div>
     </div>
