@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import SL99 from './slide/sl99.js';
-import S_basics from './slide/s-basics.js';
-import S_basic_flow from './slide/s-basic-flow';
-import S_basic_code from './slide/s-basic-code';
-
+import Zero from './slide/zero.js';
+import Basics from './slide/basics.js';
+import BasicFlow from './slide/basic-flow';
+import BasicCode from './slide/basic-code';
+import GeojsonOverview from './slide/geojson-overview.js';
+import GeojsonGeometryObject from './slide/geojson-geometry-obj.js';
+import GeojsonZeroDim from './slide/geojson-zero-dim.js';
+import GeojsonOneDim from './slide/geojson-one-dim.js';
+import GeojsonTwoDim from './slide/geojson-two-dim.js';
+import GeojsonHetero from './slide/geojson-hetero.js';
 
 export default props => {
   const slideArray = [
-    {comp: <SL99 height={props.height} width={props.width}/>},
-    {comp: <S_basics />},
-    {comp: <S_basic_flow />},
-    {comp: <S_basic_code />}
+    {comp: <Zero height={props.height} width={props.width}/>},
+    {comp: <Basics />},
+    {comp: <BasicFlow />},
+    {comp: <BasicCode />},
+    {comp: <GeojsonOverview />},
+    {comp: <GeojsonGeometryObject />},
+    {comp: <GeojsonZeroDim />},
+    {comp: <GeojsonOneDim />},
+    {comp: <GeojsonTwoDim />},
+    {comp: <GeojsonHetero />}
   ];
+
+  useEffect( () => props.setSlideDeckLength(slideArray.length -1), []);
   
 
   return (
