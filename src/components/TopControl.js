@@ -96,7 +96,7 @@ export default props => {
 
 
       <div className="topcontrol-where-am-i">
-        { `${props.currentSlide} / 20` }
+        { `${props.currentSlide} / ${props.slideDeckLength}` }
       </div>
 
       <div className="topcontrol-timer-wrapper">
