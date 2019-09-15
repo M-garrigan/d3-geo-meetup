@@ -10,9 +10,9 @@ export default props => {
   return (
     <div className="slide-grid-full">
       <div className="slide-title">Basics</div>
-      <div className="sbasics-geoJSON sbasics-group">
-        <div className="sbasics-group-title">geoJSON</div>
-        <pre className="sbasics-code"> 
+      <div className="basics-geoJSON basics-group">
+        <div className="basics-group-title">geoJSON</div>
+        <pre className="basics-code"> 
           <code className="language-js">
 {
 `{
@@ -40,13 +40,13 @@ export default props => {
           </code>
         </pre>
       </div>
-      <div className="sbasics-projections sbasics-group">
-        <div className="sbasics-group-title">Projection</div>
-        <div className="sbasics-projection-card"></div>
+      <div className="basics-projections basics-group">
+        <div className="basics-group-title">Projection</div>
+        <div className="basics-projection-card"></div>
       </div>
-      <div className="sbasics-geoPath sbasics-group">
-        <div className="sbasics-group-title">geoPath</div>
-        <div className="sbasics-geopath-card"></div>
+      <div className="basics-geoPath basics-group">
+        <div className="basics-group-title">geoPath</div>
+        <div className="basics-geopath-card"></div>
       </div>
       
     </div>
