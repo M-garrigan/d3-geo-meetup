@@ -53,10 +53,10 @@
 
 .topcontrol-time-display {
   align-items: center;
-  background: rgb(236, 252, 178);
+  background: #242424;
   border: none;
   border-radius: 5px;
-  color: #242424;
+  color: rgb(236, 252, 178);
   display: flex;
   font-size: 4.5vw;
   height: 80%;
@@ -64,10 +64,10 @@
 }
 .topcontrol-time-display-negative {
   align-items: center;
-  background: rgb(248, 183, 174);
+  background: #242424;
   border: none;
   border-radius: 5px;
-  color: #242424;
+  color: rgb(248, 183, 174);
   display: flex;
   font-size: 4.5vw;
   height: 80%;

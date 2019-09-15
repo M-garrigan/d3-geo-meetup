@@ -1,7 +1,4 @@
 
-.sl0-svg {
-  background:;
-}
 
 .sl0-country {
   fill: rgb(196, 100, 12);
@@ -25,13 +22,21 @@
   color: white;
   font-size: 5vw;
   font-weight: 400;
-  grid-column: 4 / span 3;
+  grid-column: 1 / span 9;
   grid-row: 1;
   margin: auto;
 }
+.slide-full-sub {
+  color: white;
+  font-size: 3vw;
+  grid-column: 2 / span 7;
+  grid-row: 2 / span 6;
+  height: 100%;
+  width: 100%;
+}
 
-/* s_basics */
-.sbasics-group {
+/* Basics */
+.basics-group {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -40,35 +45,35 @@
   margin: 10% auto;
   width: 80%;
 }
-.sbasics-geoJSON {
+.basics-geoJSON {
   background: rgba(0, 255, 255, 0.6);
   border-radius: .5rem;
   grid-column: 1 / span 3;
   grid-row: 2 / span 7;
 }
-.sbasics-projections {
+.basics-projections {
   background: rgba(255, 0, 255, 0.6);
   border-radius: .5rem;
   grid-column: 4 / span 3;
   grid-row: 2 / span 7;
 }
-.sbasics-geoPath {
+.basics-geoPath {
   background: rgba(126, 252, 0, 0.6);
   border-radius: .5rem;
   grid-column: 7 / span 3;
   grid-row: 2 / span 7;
 }
-.sbasics-group-title {
+.basics-group-title {
   color: #242424;
   font-size: 4vw;
   font-weight: 400;
 }
-.sbasics-code {
+.basics-code {
   font-size: 1vw !important;
   height: 80%;
   width: 90%;
 }
-.sbasics-projection-card {
+.basics-projection-card {
   background: #242424;
   background-image: url("/assets/projection.svg");
   background-repeat: no-repeat;
@@ -76,7 +81,7 @@
   height: 80%;
   width: 90%;
 }
-.sbasics-geopath-card {
+.basics-geopath-card {
   background: #242424;
   background-image: url("/assets/functionGen.svg");
   background-repeat: no-repeat;
@@ -85,8 +90,8 @@
   width: 90%;
 }
 
-/* s-basic-flow */
-.sbasicflow-group {
+/* BasicFlow */
+.basicflow-group {
   align-items: center;
   display: flex;
   height: 60%;
@@ -94,30 +99,30 @@
   margin: 10% 5%;
   width: 90%;
 }
-.sbasicflow-geoJSON {
+.basicflow-geoJSON {
   background: rgba(0, 255, 255, 0.6);
   border-radius: .5rem;
   grid-column: 2 / span 3;
   grid-row: 2 / span 2;
 }
-.sbasicflow-projection {
+.basicflow-projection {
   background: rgba(255, 0, 255, 0.6);
   border-radius: .5rem;
   grid-column: 6 / span 3;
   grid-row: 2 / span 2;
 }
-.sbasicflow-geoPath {
+.basicflow-geoPath {
   background: rgba(126, 252, 0, 0.6);
   border-radius: .5rem;
   grid-column: 4 / span 3;
   grid-row: 6 / span 2;
 }
-.sbasicflow-title {
+.basicflow-group > p {
   color: #242424;
   font-size: 4vw;
   font-weight: 400;
 }
-.sbasicflow-arrows {
+.basicflow-arrows {
   background-image: url("/assets/arrows.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -125,15 +130,28 @@
   grid-row: 4 / span 2;
   height: 100%;
   width: 100%;
-  color: #d40055
 }
 
-/* s-basic-code */
-.sbasiccode-code {
-  font-size: 1.5vw !important;
+/* BasicCode */
+.basiccode-code {
+  font-size: 1.4vw !important;
   grid-column: 2 / span 7;
   grid-row: 2 / span 6;
   height: 100%;
   margin: 0 !important;
   width: 100%;
+}
+
+/* GeojsonOverview & GeojsonGeometryObject */
+.geojson-overview-li,
+.geojson-geometry-object-li {
+  margin: 1vw 0;
+}
+
+/* GeojsonZeroDim */
+.geojson-dim-p {
+  margin-top: 1vw;
+}
+.geojson-dim-code {
+  font-size: 2vw !important;
 }
