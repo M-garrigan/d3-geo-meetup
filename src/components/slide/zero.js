@@ -1,151 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useLayoutEffect } from 'react';
 
-import { geoOrthographic, geoPath, geoCircle, geoGraticule, geoAlbers } from 'd3-geo';
-import { select }from 'd3-selection';
-import { mesh, feature } from 'topojson-client';
+import { geoOrthographic, geoPath } from 'd3-geo';
+import { feature }from 'topojson-client';
 
-import geoData from '../../utils/geoData.js';
-import gD from '../../utils/gD.js';
+import world from '../../../node_modules/world-atlas/land-50m.json';
+
 import '../../styles/Slides.css';
-
-let point = {
-  "type":"Feature",
-  "properties":{
-    "name":"Point"
-  },
-  "geometry":{
-    "type":"Point",
-    "coordinates":[]
-  },
-"id":"SKIN"
-};
-
-
+// console.log('world: ', world)
 
 export default props => {
+  const { width, height } = props;
+
+  const [canvas, setCanvas] = useState(null);
   const [lambda, setLambda] = useState(0);
 
+  const canvasRef = useCallback(node => {
+      setCanvas(node);
+  }, []);
+
   const rotate = () => {
-    // console.log('called')
-    setLambda(lambda - 5);
+    setLambda(lambda - 0.5);
   };
 
-  // useEffect( () => {
-  //   let timeout = setTimeout(rotate, 500);
+  useEffect( () => {
+    let timeout = setTimeout(rotate, 200);
 
-  //   return () => clearTimeout(timeout);
-  // }, [lambda]);
+    return () => clearTimeout(timeout);
+  }, [lambda]);
 
-  let gratProj = geoGraticule();
-  // console.log('grat: ', gratProj())
-  // console.log('grat: ', gratProj.lines())
+  useLayoutEffect(() => {
+    if (canvas) {
+      let proj = geoOrthographic()
+        .rotate([lambda, 0, 0])
+        .fitExtent(
+          [[50,50], [width - 50, height - 50]], 
+          feature(world, world.objects.land)
+        );
+      let ctx = canvas.getContext('2d');
+      let path = geoPath(proj, ctx);
 
-  let circleProj = geoCircle();
-  // console.log('cir: ', circleProj())
-  
-  const proj = geoOrthographic()
-    .rotate([lambda, 0, 0.3])
-    .fitExtent([[50,50], [props.width -50, props.height -50]], geoData);
+      // background
+      ctx.beginPath();
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, width, height);
+      ctx.stroke();
 
-  const p = geoPath().projection(proj);
-  const path = geoPath();
+      // sphere background
+      ctx.beginPath();
+      ctx.strokeStyle = "#0000ff";
+      ctx.fillStyle = "#0000ff";
+      path({type: "Sphere"});
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+      ctx.shadowBlur    = 20;
+      ctx.shadowColor   = "rgba(145, 200, 245, 0.8)";
+      ctx.stroke();
+      ctx.fill();
 
-  let points = circleProj().coordinates[0].map( p => {
-    
-    return ({
-      "type":"Feature",
-      "properties":{
-        "name":"Point"
-      },
-      "geometry":{
-        "type":"Point",
-        "coordinates": p
-      },
-    "id":"SKIN"
-    });
-  })
-  // console.log('pts: ', points)
+      ctx.beginPath();
+      ctx.strokeStyle = "#000";
+      ctx.fillStyle = "#b19a5c";
+      path(feature(world, world.objects.land));
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+      ctx.shadowBlur    = 10;
+      ctx.shadowColor   = "#333";
+      ctx.stroke();
+      ctx.fill();
+
+      
+    }
+  }, [canvas, lambda,  height, width]);
 
 
   return (
-    <div className="sl0-wrapper">
-      <svg
-        className="sl0-svg"
-        height={props.height}
-        width={props.width}
-      >
-        <defs>
-          <linearGradient id="myGradient" gradientTransform="rotate(75)">
-            <stop offset="0%"  stopColor="white" />
-            <stop offset="30%" stopColor="skyblue" />
-            <stop offset="70%" stopColor="rgb(0, 108, 250)" />
-            <stop offset="100%" stopColor="blue" />
-          </linearGradient>
-        </defs>
-    
-      <path
-        className="sl0-ocean"
-        
-        ref={
-          node => (
-            select(node)
-              .datum(gratProj)
-              .attr('d', p) 
-              .attr('fill', "url('#myGradient')")
-              // .on('mouseenter', () => select(node).style('fill', 'orange'))
-              // .on('mouseleave', () => select(node).style('fill', 'blue'))
-          )}
-      />
-
-      {
-        points.map( (item, idx) => {
-          
-          return (
-            <circle
-              className={`circle-${idx}`}
-              cx={proj(item.geometry.coordinates)[0]}
-              cy={proj(item.geometry.coordinates)[1]}
-              r="3"
-            />
-          )
-        })
-      }
-
-      {/* {
-        feature(gD, gD.objects).features.map( (item, idx) => {
-          console.log(item);
-          return (
-            <path
-              key={idx}
-              className='lower48-path-states'
-              
-              ref={ node => select(node).attr('d', () => path(item)) }
-            />
-          )
-        })
-      }
-      } */}
-         
-        {
-          geoData.features.map( (item, idx) => (
-            <path
-              className="sl0-country"
-              key={idx}
-              ref={
-                node => (
-                  select(node)
-                    .datum(item)
-                    .attr('d', p) 
-                    .on('mouseenter', () => select(node).style('fill', 'orange'))
-                    .on('mouseleave', () => select(node).style('fill', 'black'))
-                )}
-            />
-          ))
-        }
-        
-      </svg>
-
-    </div>
+    <canvas 
+      width={width}
+      height={height}
+      ref={canvasRef}
+    >
+    </canvas>
   );
 
 };
