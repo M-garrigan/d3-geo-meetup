@@ -100,27 +100,33 @@ export default props => {
       </div>
 
       <div className="topcontrol-timer-wrapper">
+
+        <div className={isTimeNegative ? "topcontrol-time-display-negative" : "topcontrol-time-display"}>
+          <p>{formatTime(time)}</p>
+        </div>  
+
+        <div className="topcontrol-play-reset-wrapper"> 
         
-        <div 
-          className="topcontrol-button topcontrol-reset-button" 
-          onClick={() => {
-            setTime(0);
-            setPlaySelected('play');
-            setIsTimerActive(false);
-            setIsTimeNegative(false);
-          }}
-        >
-          <svg
-            className="svg-button svg-reset-button"
-            height={props.height * 0.4}
-            viewBox="0 0 512 512"
-            width={props.height * 0.4}
+          <div 
+            className="topcontrol-button topcontrol-reset-button" 
+            onClick={() => {
+              setTime(0);
+              setPlaySelected('play');
+              setIsTimerActive(false);
+              setIsTimeNegative(false);
+            }}
           >
-            <path
-              d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z"
-            />
-          </svg>
-        </div>
+            <svg
+              className="svg-button svg-reset-button"
+              height={props.height * 0.3}
+              viewBox="0 0 512 512"
+              width={props.height * 0.3}
+            >
+              <path
+                d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z"
+              />
+            </svg>
+          </div>
 
         {
           playSelected === 'play'
@@ -135,9 +141,9 @@ export default props => {
               >
                 <svg
                   className="svg-button svg-play-button"
-                  height={props.height * 0.4}
+                  height={props.height * 0.3}
                   viewBox="0 0 512 512"
-                  width={props.height * 0.4}
+                  width={props.height * 0.3}
                 >
                   <path
                     d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
@@ -155,9 +161,9 @@ export default props => {
               >
                 <svg
                   className="svg-button svg-pause-button"
-                  height={props.height * 0.4}
+                  height={props.height * 0.3}
                   viewBox="0 0 512 512"
-                  width={props.height * 0.4}
+                  width={props.height * 0.3}
                 >
                   <path
                     d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"
@@ -167,9 +173,7 @@ export default props => {
               )
           }
 
-        <div className={isTimeNegative ? "topcontrol-time-display-negative" : "topcontrol-time-display"}>
-          <p>{formatTime(time)}</p>
-        </div>  
+        </div>
 
         <div className="topcontrol-add-time-wrapper">
           <div 
@@ -178,15 +182,15 @@ export default props => {
           >
             <svg
               className="svg-button svg-pause-button"
-              height={props.height * 0.25}
+              height={props.height * 0.2}
               viewBox="0 0 512 512"
-              width={props.height * 0.25}
+              width={props.height * 0.2}
             >
               <path
                 d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
               />
             </svg>
-            <span>5 min</span>
+            <span>5</span>
           </div>
           <div 
             className="topcontrol-add-time-button topcontrol-add-time-1"
@@ -194,20 +198,19 @@ export default props => {
           >
             <svg
               className="svg-button svg-pause-button"
-              height={props.height * 0.25}
+              height={props.height * 0.2}
               viewBox="0 0 512 512"
-              width={props.height * 0.25}
+              width={props.height * 0.2}
             >
               <path
                 d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
               />
             </svg>
-            <span>1 min</span>
+            <span>1</span>
           </div>
         </div>        
 
-      </div>
-      
+      </div> 
     </div>
   );
 };
