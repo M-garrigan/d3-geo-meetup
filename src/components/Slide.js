@@ -10,8 +10,11 @@ import GeojsonZeroDim from './slide/geojson-zero-dim.js';
 import GeojsonOneDim from './slide/geojson-one-dim.js';
 import GeojsonTwoDim from './slide/geojson-two-dim.js';
 import GeojsonHetero from './slide/geojson-hetero.js';
+import Antimeridian from './slide/antimeridian.js';
 
 export default props => {
+  const { setSlideDeckLength } = props;
+
   const slideArray = [
     {comp: <Zero height={props.height} width={props.width}/>},
     {comp: <Basics />},
@@ -22,10 +25,14 @@ export default props => {
     {comp: <GeojsonZeroDim />},
     {comp: <GeojsonOneDim />},
     {comp: <GeojsonTwoDim />},
-    {comp: <GeojsonHetero />}
+    {comp: <GeojsonHetero />},
+    {comp: <Antimeridian height={props.height} width={props.width}/>}
   ];
 
-  useEffect( () => props.setSlideDeckLength(slideArray.length -1), []);
+  useEffect( 
+    () => setSlideDeckLength(slideArray.length -1), 
+    [ setSlideDeckLength, slideArray.length ]
+  );
   
 
   return (
