@@ -22,6 +22,8 @@ const proj = geoOrthographic()
   .rotate([lambda, 0, 0.3])
   .fitExtent([[50,50], [props.width -50, props.height -50]], geoData);
 const path = geoPath().projection(proj);
+
+// ...later in the react return jsx
 geoData.features.map( (item, idx) => (
   <path
     key={idx}
