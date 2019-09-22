@@ -11,22 +11,31 @@ import GeojsonOneDim from './slide/geojson-one-dim.js';
 import GeojsonTwoDim from './slide/geojson-two-dim.js';
 import GeojsonHetero from './slide/geojson-hetero.js';
 import Antimeridian from './slide/antimeridian.js';
+import Projection from './slide/projection.js';
+import ProjectionMeth from './slide/projection-meth.js';
+import ProjectionRotate from './slide/projection-rotate.js';
+import CanvasSVG from './slide/canvas-svg.js';
 
 export default props => {
   const { setSlideDeckLength } = props;
 
   const slideArray = [
-    {comp: <Zero height={props.height} width={props.width}/>},
-    {comp: <Basics />},
-    {comp: <BasicFlow />},
-    {comp: <BasicCode />},
-    {comp: <GeojsonOverview />},
-    {comp: <GeojsonGeometryObject />},
-    {comp: <GeojsonZeroDim />},
-    {comp: <GeojsonOneDim />},
-    {comp: <GeojsonTwoDim />},
-    {comp: <GeojsonHetero />},
-    {comp: <Antimeridian height={props.height} width={props.width}/>}
+    <ProjectionRotate height={props.height} width={props.width} />,
+  
+    <Zero height={props.height} width={props.width}/>,
+    <Basics />,
+    <BasicFlow />,
+    <BasicCode />,
+    <GeojsonOverview />,
+    <GeojsonGeometryObject />,
+    <GeojsonZeroDim />,
+    <GeojsonOneDim />,
+    <GeojsonTwoDim />,
+    <GeojsonHetero />,
+    <Antimeridian height={props.height} width={props.width}/>,
+    <Projection />,
+    <ProjectionMeth />,
+    <CanvasSVG />,
   ];
 
   useEffect( 
@@ -37,7 +46,7 @@ export default props => {
 
   return (
     <div className="slide-wrapper">
-      {slideArray[props.currentSlide].comp}
+      {slideArray[props.currentSlide]}
     </div>
   );
 };
