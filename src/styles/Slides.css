@@ -169,3 +169,204 @@
   font-size: 4vw;
   height: 10%;
 }
+
+/* Projection */
+.projection-image {
+  background: #242424;
+  background-image: url("/assets/projection.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: .5rem;
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 6;
+  height: 90%;
+  margin: auto;
+  width: 90%;
+}
+.projection-group {
+  align-items: center;
+  background: #242424;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  grid-column: 4 / span 6;
+  grid-row: 2 / span 6;
+  height: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+.projection-group p {
+  color: white;
+  font-size: 3vw;
+}
+
+/* ProjectionMeth */
+.projection-meth-group {
+  align-items: center;
+  background: #242424;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+  width: 90%;
+}
+.projection-meth-group-left {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 6;
+}
+.projection-meth-group-right {
+  grid-column: 6 / span 3;
+  grid-row: 2 / span 6;
+}
+.projection-meth-group p {
+  color: white;
+  font-size: 3vw;
+}
+
+/* ProjectionRotate */
+.projection-rotate-group {
+  align-items: flex-start;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  grid-column: 3 / span 6;
+  grid-row: 2 / span 2;
+  height: 100%;
+  justify-content: space-evenly;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+.projection-rotate-group p {
+  color: white;
+  font-size: 2.2vw;
+}
+.projection-rotate-globes {
+  align-items: center;
+  border-radius: .5rem;
+  display: flex;
+  grid-column: 1 / span 9;
+  grid-row: 4 / span 4;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.projection-rotate-globe p {
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+}
+
+/* CanvasSVG */
+
+.canvasSVG-group {
+  align-items: center;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 75%;
+}
+
+.canvasSVG-canvas-group {
+  border: 2px solid orange;
+  grid-column: 1 / span 5;
+  grid-row: 2 / span 6;
+}
+.canvasSVG-svg-group {
+  border: 2px solid rgba(126, 252, 0, 0.6);
+  grid-column: 5 / span 5;
+  grid-row: 2 / span 6;
+}
+.canvasSVG-canvas-title {
+  color: orange;
+  font-size: 6vw;
+}
+.canvasSVG-svg-title {
+  color: rgba(126, 252, 0, 0.6);
+  font-size: 6vw;
+}
+.canvasSVG-canvas-group p,
+.canvasSVG-svg-group p {
+  color: white;
+  font-size: 3vw;
+}
+
+/* Path */
+.path-image {
+  background-image: url('/assets/path-gears.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  grid-column: 3 / span 5;
+  grid-row: 2 / span 6;
+  height: 90%;
+  margin: auto;
+  width: 90%;
+}
+.path-input-geo {
+  align-items: center;
+  background: rgba(255, 0, 255, 0.6);
+  border-radius: .5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 3vw;
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 2;
+  height: 70%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 80%;
+}
+.path-input-feature {
+  align-items: center;
+  background: rgba(255, 0, 255, 0.6);
+  border-radius: .5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 3vw;
+  grid-column: 1 / span 3;
+  grid-row: 5 / span 2;
+  height: 70%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 80%;
+}
+.path-output-svg {
+  align-items: center;
+  background: rgba(126, 252, 0, 0.6);
+  border-radius: .5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 3vw;
+  grid-column: 7 / span 3;
+  grid-row: 3 / span 2;
+  height: 70%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 80%;
+}
+.path-output-canvas {
+  align-items: center;
+  background: rgba(126, 252, 0, 0.6);
+  border-radius: .5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 3vw;
+  grid-column: 7 / span 3;
+  grid-row: 5 / span 2;
+  height: 70%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 80%;
+}
