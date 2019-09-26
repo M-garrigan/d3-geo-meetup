@@ -33,7 +33,7 @@ export default props => {
       let proj = geoOrthographic()
         .rotate([lambda, 0, 0])
         .fitExtent(
-          [[50,50], [width - 50, height - 50]], 
+          [[5,5], [width - 5, height - 5]], 
           feature(world, world.objects.land)
         );
       let ctx = canvas.getContext('2d');

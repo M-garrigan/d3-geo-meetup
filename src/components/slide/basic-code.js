@@ -10,17 +10,25 @@ export default props => {
 
   return (
     <div className="slide-grid-full">
-      <div className="slide-title">Basic Code</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.08}}
+      >Basic Code</div>
         
-        <pre className="basiccode-code"> 
+        <pre 
+          className="basiccode-code"
+          style={{fontSize: props.width * 0.02}}
+        > 
           <code className="language-js">
 {
 `import { geoOrthographic, geoPath } from 'd3-geo';
 import { select } from 'd3-selection';
 import geoData from '../../utils/geoData.js';
+
 const proj = geoOrthographic()
-  .rotate([lambda, 0, 0.3])
-  .fitExtent([[50,50], [props.width -50, props.height -50]], geoData);
+  .rotate([lambda, 0, 0])
+  .fitExtent([[50,50], [width - 50, height - 50]], geoData);
+  
 const path = geoPath().projection(proj);
 
 // ...later in the react return jsx

@@ -5,14 +5,25 @@ import '../../../node_modules/prismjs/themes/prism-okaidia.css';
 
 
 export default props => {
+  const fontSize = props.width * 0.05;
+
   // Initialize syntax highting
   useEffect( () => Prism.highlightAll(), []);
   return (
     <div className="slide-grid-full">
-      <div className="slide-title">Basics</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.08}}
+      >Basics</div>
       <div className="basics-geoJSON basics-group">
-        <div className="basics-group-title">geoJSON</div>
-        <pre className="basics-code"> 
+        <div 
+          className="basics-group-title"
+          style={{fontSize: fontSize}}
+        >geoJSON</div>
+        <pre 
+          className="basics-code"
+          style={{fontSize: props.width * 0.01}}
+        > 
           <code className="language-js">
 {
 `{
@@ -41,11 +52,17 @@ export default props => {
         </pre>
       </div>
       <div className="basics-projections basics-group">
-        <div className="basics-group-title">Projection</div>
+        <div 
+          className="basics-group-title"
+          style={{fontSize: fontSize}}
+        >Projection</div>
         <div className="basics-projection-card"></div>
       </div>
       <div className="basics-geoPath basics-group">
-        <div className="basics-group-title">geoPath</div>
+        <div 
+          className="basics-group-title"
+          style={{fontSize: fontSize}}
+        >geoPath</div>
         <div className="basics-geopath-card"></div>
       </div>
       

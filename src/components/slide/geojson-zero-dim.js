@@ -12,22 +12,45 @@ export default props => {
   return (
     <div className="slide-grid-full">
 
-      <div className="slide-title">Zero Dimension</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.07}}
+      >Zero Dimension</div>
 
-      <div className="slide-full-sub">
-        <p className="geojson-dim-p">1: Point</p>
-        <pre className="geojson-dim-code"> 
-            <code className="language-js">
+      <div className="slide-full-bullets">
+        <pre 
+          className="geojson-dim-code"
+          style={{fontSize: props.width * 0.02}}
+        > 
+          <code className="language-js">
 {
-`{
+`// - Point -
+{
   "type": "Point",
   "coordinates": [ 61.210817 , 35.650072 ]  // [ longitude, latitude ]
 }`.trim()
 }
           </code>
         </pre>
-        <p className="geojson-dim-p">2: MultiPoint</p>
-        <p className="geojson-dim-p">[  [ Point ] , [ Point ] , [ Point ] , ... ]</p>
+
+        <pre 
+          className="geojson-dim-code"
+          style={{fontSize: props.width * 0.02}}
+        > 
+          <code className="language-js">
+{
+`// - MultiPoint -
+{
+  "type": "MultiPoint",
+  // [  [ Point ] , [ Point ] , [ Point ] , ... ]
+  "coordinates": [
+    [ 61.210817 , 35.650072 ], [ 31.240837 , 31.404072 ] 
+  ]
+}`.trim()
+}
+          </code>
+        </pre>
+       
       </div>
       
     </div>

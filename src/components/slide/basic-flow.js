@@ -1,24 +1,40 @@
 import React from 'react';
 
 
-export default props => (
-  <div className="slide-grid-full">
+export default props => {
+  const fontSize = props.width * 0.05;
+  
+  return (
+    <div className="slide-grid-full">
 
-    <div className="slide-title">Basic Flow</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.08}}
+      >Basic Flow</div>
 
-    <div className="basicflow-geoJSON basicflow-group">
-      <p>geoJSON</p>
-    </div>
+      <div 
+        className="basicflow-geoJSON basicflow-group"
+        style={{fontSize: fontSize}}
+      >
+        <p>geoJSON</p>
+      </div>
 
-    <div className="basicflow-projection basicflow-group">
-      <p>Projection</p>
-    </div>
+      <div 
+        className="basicflow-projection basicflow-group"
+        style={{fontSize: fontSize}}
+      >
+        <p>Projection</p>
+      </div>
 
-    <div className="basicflow-geoPath basicflow-group">
-      <p>geoPath</p>
-    </div>
+      <div 
+        className="basicflow-geoPath basicflow-group"
+        style={{fontSize: fontSize}}
+      >
+        <p>geoPath</p>
+      </div>
+        
+      <div className="basicflow-arrows"></div>
       
-    <div className="basicflow-arrows"></div>
-    
-  </div>
-);
+    </div>
+  );
+};

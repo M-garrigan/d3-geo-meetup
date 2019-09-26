@@ -12,16 +12,18 @@ export default props => {
   return (
     <div className="slide-grid-full">
 
-      <div className="slide-title">Two Dimensions</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.07}}
+      >Two Dimensions</div>
 
       <div className="slide-full-sub">
-        <p className="geojson-dim-p">5: Polygon</p>
-        <pre className="geojson-dim-code"> 
-            <code className="language-js">
+    
+        <pre style={{fontSize: props.width * 0.02}}> 
+          <code className="language-js">
 {
-`{
+`{ // must contain 4 or more points with the first and last points are equivalent
   "type": "Polygon",
-  // must contain 4 or more points with the first and last points are equivalent
   "coordinates": [ 
     [ 61.210817 , 35.650072 ], [ 62.230651 , 35.270664 ],
     [ 62.984662 , 35.404041 ], [ 61.210817 , 35.650072 ] 
@@ -30,8 +32,21 @@ export default props => {
 }
           </code>
         </pre>
-        <p className="geojson-dim-p">6: MultiPolygon</p>
-        <p className="geojson-dim-p">[  [ Polygon ] , [ Polygon ] , [ Polygon ] , ... ]</p>
+
+        <pre style={{fontSize: props.width * 0.02}}> 
+          <code className="language-js">
+{
+`{ // [  [ Polygon ] , [ Polygon ] , [ Polygon ] , ... ]
+  "type": "MultiPolygon",
+  "coordinates": [ 
+    [ [ 61.210817 , 35.650072 ], [ 62.230651 , 35.270664 ], [ 62.984662 , 35.404041 ], [ 61.210817 , 35.650072 ] ],
+    [ [ 21.210817 , 07.650072 ], [ 22.230651 , 25.270664 ], [ 12.984662 , 25.404041 ], [ 21.210817 , 07.650072 ] ]
+  ]
+}`.trim()
+}
+          </code>
+        </pre>
+        
       </div>
       
     </div>
