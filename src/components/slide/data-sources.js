@@ -4,9 +4,15 @@ import React from 'react';
 export default props => (
   <div className="slide-grid-full">
 
-    <div className="slide-title">Data Sources</div>
+    <div 
+      className="slide-title"
+      style={{fontSize: props.width * 0.07}}
+    >Data Sources</div>
 
-    <ul className="slide-full-sub">
+    <ul 
+      className="slide-full-bullets"
+      style={{fontSize: props.width * 0.03}}
+    >
       <a 
         href="https://www.census.gov/programs-surveys/geography.html"
         className="data-src-a"

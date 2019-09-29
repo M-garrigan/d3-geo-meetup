@@ -218,7 +218,6 @@
 }
 .projection-group p {
   color: white;
-  font-size: 3vw;
 }
 
 /* ProjectionMeth */
@@ -244,7 +243,6 @@
 }
 .projection-meth-group p {
   color: white;
-  font-size: 3vw;
 }
 
 /* ProjectionRotate */
@@ -263,7 +261,6 @@
 }
 .projection-rotate-group p {
   color: white;
-  font-size: 2.2vw;
 }
 .projection-rotate-globes {
   align-items: center;
@@ -277,7 +274,6 @@
 }
 .projection-rotate-globe p {
   color: white;
-  font-size: 2vw;
   text-align: center;
 }
 
@@ -306,16 +302,13 @@
 }
 .canvasSVG-canvas-title {
   color: orange;
-  font-size: 6vw;
 }
 .canvasSVG-svg-title {
   color: rgba(126, 252, 0, 0.6);
-  font-size: 6vw;
 }
 .canvasSVG-canvas-group p,
 .canvasSVG-svg-group p {
   color: white;
-  font-size: 3vw;
 }
 
 /* Path */
@@ -336,7 +329,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 3vw;
   grid-column: 1 / span 3;
   grid-row: 3 / span 2;
   height: 70%;
@@ -351,7 +343,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 3vw;
   grid-column: 1 / span 3;
   grid-row: 5 / span 2;
   height: 70%;
@@ -366,7 +357,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 3vw;
   grid-column: 7 / span 3;
   grid-row: 3 / span 2;
   height: 70%;
@@ -381,7 +371,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 3vw;
   grid-column: 7 / span 3;
   grid-row: 5 / span 2;
   height: 70%;

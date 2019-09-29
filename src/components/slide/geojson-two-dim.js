@@ -19,10 +19,11 @@ export default props => {
 
       <div className="slide-full-sub">
     
-        <pre style={{fontSize: props.width * 0.02}}> 
+        <pre style={{fontSize: props.width * 0.015}}> 
           <code className="language-js">
 {
-`{ // must contain 4 or more points with the first and last points are equivalent
+`{ - Polygon -
+  // must contain 4 or more points with the first and last points are equivalent
   "type": "Polygon",
   "coordinates": [ 
     [ 61.210817 , 35.650072 ], [ 62.230651 , 35.270664 ],
@@ -33,10 +34,11 @@ export default props => {
           </code>
         </pre>
 
-        <pre style={{fontSize: props.width * 0.02}}> 
+        <pre style={{fontSize: props.width * 0.015}}> 
           <code className="language-js">
 {
-`{ // [  [ Polygon ] , [ Polygon ] , [ Polygon ] , ... ]
+`{ - MultiPolygon -
+  // [  [ Polygon ] , [ Polygon ] , [ Polygon ] , ... ]
   "type": "MultiPolygon",
   "coordinates": [ 
     [ [ 61.210817 , 35.650072 ], [ 62.230651 , 35.270664 ], [ 62.984662 , 35.404041 ], [ 61.210817 , 35.650072 ] ],

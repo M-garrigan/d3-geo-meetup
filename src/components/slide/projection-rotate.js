@@ -84,9 +84,15 @@ export default props => {
   return (
     <div className="slide-grid-full">
 
-      <div className="slide-title">.rotate( )</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.07}}
+      >.rotate( )</div>
 
-      <div className="projection-rotate-group">
+      <div 
+        className="projection-rotate-group"
+        style={{fontSize: props.width * 0.03}}
+      >
         <p>projection.rotate( [ lambda, phi, gamma ] )</p>
         <p>projection.rotate( [ yaw, pitch, roll ] )</p>
         <p>All inputs are in degrees</p>
@@ -95,7 +101,7 @@ export default props => {
 
       <div className="projection-rotate-globes">
         <div className="projection-rotate-globe">
-          <p>Lambda</p>
+          <p style={{fontSize: props.width * 0.03}}>Lambda</p>
           <canvas 
             className="lambda-globe"
             height={globeSize}
@@ -104,7 +110,7 @@ export default props => {
           ></canvas>
         </div>
         <div className="projection-rotate-globe">
-          <p>Phi</p>
+          <p style={{fontSize: props.width * 0.03}}>Phi</p>
           <canvas 
             className="phi-globe"
             height={globeSize}
@@ -113,7 +119,7 @@ export default props => {
           ></canvas>
         </div>
         <div className="projection-rotate-globe">
-          <p>Gamma</p>
+          <p style={{fontSize: props.width * 0.03}}>Gamma</p>
           <canvas 
             className="gamma-globe"
             height={globeSize}

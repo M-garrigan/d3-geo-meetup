@@ -12,13 +12,22 @@ export default props => {
   return (
     <div className="slide-grid-full">
 
-      <div className="slide-title">7: GeometryCollection</div>
+      <div 
+        className="slide-title"
+        style={{fontSize: props.width * 0.07}}
+      >7: GeometryCollection</div>
 
       <div className="slide-full-sub">
-        <p className="geojson-dim-p">Must have a property named 'geometries' with a value that is an array</p>
-        <p className="geojson-dim-p">Each value in the array must be a geometry type and can be mixed</p>
+        <p 
+          className="geojson-dim-p"
+          style={{fontSize: props.width * 0.025}}
+        >Must have a property named 'geometries' with a value that is an array</p>
+        <p 
+          className="geojson-dim-p"
+          style={{fontSize: props.width * 0.025}}
+        >Each value in the array must be a geometry type and can be mixed</p>
         
-        <pre className="geojson-dim-code"> 
+        <pre style={{fontSize: props.width * 0.02}}> 
             <code className="language-js">
 {
 `{
