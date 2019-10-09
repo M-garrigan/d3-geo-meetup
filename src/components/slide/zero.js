@@ -75,7 +75,7 @@ export default props => {
 
   return (
     <canvas 
-      width={width}
+      width={width + 1}
       height={height}
       ref={canvasRef}
     >
