@@ -17,15 +17,15 @@ steps:
 
 - script: |
     yarn install
-    yarn run build
+    yarn run webpack
 
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/build"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/"
     includeRootFolder: false
-    archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
+    archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
     name: 'drop'
