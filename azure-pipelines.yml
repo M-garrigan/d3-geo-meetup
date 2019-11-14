@@ -17,22 +17,13 @@ steps:
     yarn build
 
 - task: ArchiveFiles@2
+  displayName: "Archive files"
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)/build'
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 
-# ## Archive the files into a zip file for publishing
-# - task: ArchiveFiles@2
-#   inputs:
-#     rootFolderOrFile: $(Build.ArtifactStagingDirectory)
-#     archiveType: 'zip'
-#     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-#     includeRootFolder: false
-
-## Publish the zip file
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
+    # name: 'drop'
