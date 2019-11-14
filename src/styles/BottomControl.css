@@ -8,7 +8,6 @@
   width: 100%;
 }
 
-
 .bottomcontrol-button {
   align-items: center;
   background: #535353;
@@ -18,7 +17,16 @@
   cursor: pointer;
   display: flex;
   height: 95%;
-  
+  margin: 0 8px;
+  padding: 2px 4px;
+}
+
+.bottomcontrol-button-disabled {
+  align-items: center;
+  background: #535353;
+  border-radius: 5px;
+  display: flex;
+  height: 95%;
   margin: 0 8px;
   padding: 2px 4px;
 }
