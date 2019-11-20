@@ -9,20 +9,27 @@ export default props => (
       style={{fontSize: props.width * 0.07}}
     >Converting Data</div>
 
-    <ul 
-      className="slide-full-bullets"
-      style={{fontSize: props.width * 0.03}}
+    <div 
+      className="converting-wrapper"
+      style={{fontSize: props.width * 0.035}}
     >
-      <li>npm install shapefile</li>
-      <li>Shapefile to GeoJSON</li>
-      <li>npm install topojson-server</li>
-      <li>GeoJSON to TopoJSON</li>
-      <li>npm install topojson-client</li>
-      <li>TopoJSON to GeoJSON</li>
-      <li>Merge TopoJSON</li>
-      <li>Quantize TopoJSON Coordinates</li>
-  
-    </ul>
+      <div className="converting-column">
+        <p className="converting-title">Tool</p>
+        <p>yarn add shapefile</p>
+        <p>yarn add topojson-server</p>
+        <p>yarn add topojson-client</p>
+        <p>yarn add topojson-simplify</p>
+      </div>
+
+      <div className="converting-column">
+        <p className="converting-title">Effect</p>
+        <p>Shapefile => GeoJSON</p>
+        <p>GeoJSON => TopoJSON</p>
+        <p>TopoJSON => GeoJSON</p>
+        <p>file => smaller file</p>
+      </div>
+
+    </div>
 
   </div>
 );

@@ -15,25 +15,25 @@ export default props => (
     >
       <a 
         href="https://www.census.gov/programs-surveys/geography.html"
-        className="data-src-a"
+        className="link-pink"
       >
         <li >US Census Bureau</li>
       </a>
       <a 
         href="https://www.naturalearthdata.com"
-        className="data-src-a"
+        className="link-pink"
       >
         <li >Natural Earth</li>
       </a>
       <a 
         href="https://github.com/topojson/world-atlas"
-        className="data-src-a"
+        className="link-pink"
       >
         <li >World Atlas</li>
       </a>
       <a 
         href="https://github.com/topojson/us-atlas"
-        className="data-src-a"
+        className="link-pink"
       >
         <li >US Atlas</li>
       </a>

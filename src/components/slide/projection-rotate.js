@@ -4,7 +4,6 @@ import { geoOrthographic, geoPath } from 'd3-geo';
 import { feature }from 'topojson-client';
 
 import world from '../../../node_modules/world-atlas/countries-110m.json';
-console.log('w:', world)
 
 export default props => {
   const globeSize = Math.round(props.height * 0.43);

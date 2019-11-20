@@ -21,10 +21,14 @@ export default props => (
       <li>.dbf — attribute format; columnar attributes for each shape, in dBase IV format</li>
       
       <li>
-        <a href="www.esri.com/library/whitepapers/pdfs/shapefile.pdf">Shapefile Whitepaper</a>
+        <a 
+          className="link-pink"
+          href="www.esri.com/library/whitepapers/pdfs/shapefile.pdf">Shapefile Whitepaper</a>
       </li>
       <li>
-        <a href="www.esri.com/news/arcuser/0401/topo.html">Shapefile Overview</a>
+        <a 
+          className="link-pink"
+          href="www.esri.com/news/arcuser/0401/topo.html">Shapefile Overview</a>
       </li>
     </ul>
 

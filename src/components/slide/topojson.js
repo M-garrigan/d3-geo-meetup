@@ -20,7 +20,9 @@ export default props => (
       <li>TopoJSON files are stitched together from shared line segments called arcs</li>
       
       <li>
-        <a href="https://github.com/topojson/topojson-specification">TopoJSON Spec</a>
+        <a 
+          className="link-pink"
+          href="https://github.com/topojson/topojson-specification">TopoJSON Spec</a>
       </li>
     </ul>
 
