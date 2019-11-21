@@ -2,12 +2,12 @@
 import React, { useState, useCallback, useLayoutEffect } from 'react';
 
 import { geoAlbers, geoPath } from 'd3-geo';
-import { schemePaired } from 'd3-scale-chromatic';
+import { schemePaired, schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
 import { mesh, feature } from 'topojson-client';
 
 import us from '../../../node_modules/us-atlas/states-10m.json';
-// console.log(feature(us, us.objects.states).features);
+
 
 export default ({ height, width }) => {
   const [svg, setSvg] = useState(null);
@@ -15,17 +15,19 @@ export default ({ height, width }) => {
   const svgRef = useCallback(node => {
     setSvg(node);
   }, []);
-
-  // let proj = geoAlbers().translate([width / 2, height / 2]);
   
 
-  // remove Alaska, Hawaii, Virgin Islands and Puerto Rico
-  us.objects.states.geometries = us.objects.states.geometries.filter(d => d.id !== "02" && d.id !== "15" && d.id !== "78" && d.id !== "72");
+  // remove Alaska, Hawaii, Virgin Islands, Guam and Puerto Rico
+  us.objects.states.geometries = us.objects.states.geometries.filter(d => d.id !== "02" && d.id !== "15" && d.id !== "78" && d.id !== "72" && d.id !== "68" && d.id !== "66" && d.id !== "60" && d.id !== "69");
+
 
   useLayoutEffect( () => {
     if (svg) {
       
-      let proj = geoAlbers().translate([width / 2, height / 2]); // .scale(1400)
+      let proj = geoAlbers()
+        .fitSize([width * 0.9, height * 0.9], feature(us, us.objects.states))
+        .translate([width / 2, height / 2])
+       
       let path = geoPath(proj);
       
       const svgElem = select(svg);
@@ -59,14 +61,14 @@ export default ({ height, width }) => {
   
       noiseFilter.append('feGaussianBlur')
         .attr('in', 'ripples')
-        .attr('color-interpolation-filters', 'sRGB') // for better results in Safari
+        .attr('color-interpolation-filters', 'sRGB') 
         .attr('stdDeviation', 2);
       
       // create/append the filter
       const filter = defs.append('filter')
         .attr('id', 'border-blur');
 
-      // the glow filter needs three parts: a blur, a color, and a composite of the two as its final result
+      // the glow filter 
       filter.append('feGaussianBlur')
         .attr('in', 'SourceGraphic')
         .attr('stdDeviation', 5)
@@ -85,8 +87,7 @@ export default ({ height, width }) => {
       waterLayer.append('rect')
         .attr('width', width)
         .attr('height', height)
-        .style('fill', "#333");
-        // .style('fill', "#EAF1F2");
+        .style('fill', "#e4fdfd");
 
       waterLayer.selectAll('path')
         .data(feature(us, us.objects.states).features)
@@ -95,7 +96,7 @@ export default ({ height, width }) => {
           .attr('d', path)
           .attr('stroke-linejoin', 'round')
           .attr('fill', 'none')
-          .attr('stroke', "#9fd8e0")
+          .attr('stroke', "#13bddb")
           .attr('opacity',.75)
           .attr('stroke-width', 10)
           .attr('filter', 'url(#noise)')
@@ -120,7 +121,7 @@ export default ({ height, width }) => {
         .append('path')
           .attr('d', path)
           .attr('class', 'fill')
-          .attr('fill', d => schemePaired[d.id % 12])
+          .attr('fill', d => schemeCategory10[d.id % 10])
           .attr('fill-opacity', .2);
 
       // now draw a wide, blurred stroke, clipped to the inside of the state
@@ -130,7 +131,7 @@ export default ({ height, width }) => {
         .append('path')
           .attr('d', path)
           .attr('class', 'glow')
-          .attr('stroke', d => schemePaired[d.id % 12])
+          .attr('stroke', d => schemeCategory10[d.id % 10])
           .attr('stroke-width', 20)
           .attr('stroke-linejoin', 'round')
           .attr('stroke-opacity', .75)
@@ -144,7 +145,7 @@ export default ({ height, width }) => {
             .append('path')
               .attr('d', path)
               .attr('class', 'stroke')
-              .attr('stroke', '#333')
+              .attr('stroke', '#fff')
               .attr('fill', 'none');
     }
   }, [svg, height, width]);

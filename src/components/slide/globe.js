@@ -39,6 +39,9 @@ export default props => {
       let ctx = canvas.getContext('2d');
       let path = geoPath(proj, ctx);
 
+      // clear the canvas
+      ctx.clearRect(0, 0, width, height);
+
       // background
       ctx.beginPath();
       ctx.fillStyle = "#000";
