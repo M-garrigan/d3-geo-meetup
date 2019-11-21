@@ -1,16 +1,21 @@
 
-import Zero from './slide/zero.js';
+import usSvgMap from './slide/us-svg-map.js'
 import Basics from './slide/basics.js';
 import BasicFlow from './slide/basic-flow';
 import BasicFlowAlt from './slide/basic-flow-alt';
 import BasicCode from './slide/basic-code';
+import LatLong from './slide/latlong.js';
+import DecimalDegrees from './slide/decimal-degrees.js';
 import GeojsonOverview from './slide/geojson-overview.js';
 import Antimeridian from './slide/antimeridian.js';
 import GeojsonGeometryObject from './slide/geojson-geometry-obj.js';
-import GeojsonZeroDim from './slide/geojson-zero-dim.js';
-import GeojsonOneDim from './slide/geojson-one-dim.js';
-import GeojsonTwoDim from './slide/geojson-two-dim.js';
-import GeojsonHetero from './slide/geojson-hetero.js';
+import GeoPoint from './slide/geojson-point';
+import GeoMultiPoint from './slide/geojson-multipoint.js';
+import GeoLineString from './slide/geojson-linestring.js';
+import GeoMultiLineString from './slide/geojson-multilinestring.js';
+import GeoPolygon from './slide/geojson-polygon.js';
+import GeoMultiPolygon from './slide/geojson-multipolygon.js';
+import GeoCollection from './slide/geojson-collection.js';
 import TopoJSON from './slide/topojson.js';
 import ShapeFiles from './slide/shapefiles.js';
 import ConvertingData from './slide/converting-data.js';
@@ -21,21 +26,28 @@ import ProjectionRotate from './slide/projection-rotate.js';
 import CanvasSVG from './slide/canvas-svg.js';
 import Path from './slide/path.js';
 import PathMeth from './slide/path-meth';
+import Globe from './slide/globe.js';
+import Contact from './slide/contact.js';
 
 
 export default [
-  Zero,
+  usSvgMap,
   Basics,
   BasicFlow,
   BasicFlowAlt,
   BasicCode,
-  GeojsonOverview,
+  LatLong,
+  DecimalDegrees,
   Antimeridian,
+  GeojsonOverview,
   GeojsonGeometryObject,
-  GeojsonZeroDim,
-  GeojsonOneDim,
-  GeojsonTwoDim,
-  GeojsonHetero,
+  GeoPoint,
+  GeoMultiPoint,
+  GeoLineString,
+  GeoMultiLineString,
+  GeoPolygon,
+  GeoMultiPolygon,
+  GeoCollection,
   TopoJSON,
   ShapeFiles,
   ConvertingData,
@@ -46,4 +58,6 @@ export default [
   CanvasSVG,
   Path,
   PathMeth,
+  Globe,
+  Contact
 ];
