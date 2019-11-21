@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useCallback, useLayoutEffect } from 'react';
 
 import { geoGraticule, geoOrthographic, geoPath } from 'd3-geo';
-import { feature }from 'topojson-client';
 
 import '../../styles/Slides.css';
 
@@ -73,7 +72,7 @@ export default ({ width, height }) => {
       ctx.stroke();
     
     }
-  }, [canvas, globe, height, width]);
+  }, [canvas, globe, canvasHeight, canvasWidth, height]);
 
 
   return (

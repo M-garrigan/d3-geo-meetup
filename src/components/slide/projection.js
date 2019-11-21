@@ -13,7 +13,7 @@ export default props => (
 
     <div 
       className="projection-group"
-      style={{fontSize: props.width * 0.02}}
+      style={{fontSize: props.width * 0.03}}
     >
       <p>d3-geo or d3-geo-projections</p>
       <p>Projections transform spherical polygonal geometry to planar polygonal geometry</p>

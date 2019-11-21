@@ -2,9 +2,9 @@
 import React, { useState, useCallback, useLayoutEffect } from 'react';
 
 import { geoAlbers, geoPath } from 'd3-geo';
-import { schemePaired, schemeCategory10 } from 'd3-scale-chromatic';
+import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
-import { mesh, feature } from 'topojson-client';
+import { feature } from 'topojson-client';
 
 import us from '../../../node_modules/us-atlas/states-10m.json';
 
